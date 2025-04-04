@@ -1,0 +1,42 @@
+START
+    // Step 1: Prepare to leave home
+    PRINT "Get ready to leave home"
+    PUT on shoes and backpack
+
+    // Step 2: Check if you have your school supplies
+        IF haveSchoolSupplies == FALSE THEN
+        PRINT "You forgot your Supplies. Go back inside to get them."
+        GO back inside to get your Supplies
+    END IF
+
+    // Step 3: Step outside and walk to the bus stop
+    PRINT "Step outside to the bus stop"
+
+    // Loop 1: Wait for the bus
+    WHILE busNotArrived == TRUE DO
+        PRINT "Waiting for the bus..."
+        // Check if the bus is late
+        IF busIsLate == TRUE THEN
+            PRINT "Bus is running late. Keep waiting."
+        END IF
+    END WHILE
+
+    // Step 4: Ride the bus to school
+    PRINT "Board the bus and find a seat"
+    RIDE bus to school
+
+    // Step 5: Check if you arrived at school
+    IF arrivedAtSchool == TRUE THEN
+        PRINT "You have arrived at school."
+    ELSE
+        PRINT "Something went wrong. Check your route again."
+    END IF
+
+    // Loop 2: Walk to school if the bus doesn't show up
+    WHILE busNotArrived AND you are not at school DO
+        PRINT "Bus didn't arrive. Walk to school."
+        WALK towards school
+    END WHILE
+
+    PRINT "You are now at school."
+END
