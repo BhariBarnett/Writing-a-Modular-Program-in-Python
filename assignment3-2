@@ -1,0 +1,46 @@
+start
+   input testScore, classRank
+   if testScore >= 90 then
+      if classRank >= 25 then
+         output "Accept"
+      else
+         output "Reject"
+      endif
+   else
+      if testScore >= 80 then
+         if classRank >= 50 then
+            output "Accept"
+         else
+            output "Reject"
+         endif
+      else
+         if testScore >= 70 then
+            if classRank >= 75 then
+               output "Accept"
+            else
+               output "Reject"
+            endif
+         else
+            output "Reject"
+         endif
+      endif
+   endif
+stop
+
+# Retrieve the student's test score and class rank as strings
+testScoreString = input("Enter the student's test score: ")
+classRankString = input("Enter the student's class rank: ")
+
+# Convert the string representations to integers
+testScore = int(testScoreString)
+classRank = int(classRankString)
+
+# Set the criteria for acceptance
+testScoreThreshold = 85  # The minimum score required to be accepted
+classRankThreshold = 10  # The maximum rank for top students (e.g., top 10 students)
+
+# Determine if the student meets the acceptance criteria
+if testScore >= testScoreThreshold and classRank <= classRankThreshold:
+    print("The student is accepted!")
+else:
+    print("The student is rejected.")
