@@ -1,42 +1,20 @@
-START
-    // Step 1: Prepare to leave home
-    PRINT "Get ready to leave home"
-    PUT on shoes and backpack
+# Get input from the user for year, month, and day
+year = int(input("Enter a year: "))
+month = int(input("Enter a month (1-12): "))
+day = int(input("Enter a day (1-31): "))
 
-    // Step 2: Check if you have your school supplies
-        IF haveSchoolSupplies == FALSE THEN
-        PRINT "You forgot your Supplies. Go back inside to get them."
-        GO back inside to get your Supplies
-    END IF
-
-    // Step 3: Step outside and walk to the bus stop
-    PRINT "Step outside to the bus stop"
-
-    // Loop 1: Wait for the bus
-    WHILE busNotArrived == TRUE DO
-        PRINT "Waiting for the bus..."
-        // Check if the bus is late
-        IF busIsLate == TRUE THEN
-            PRINT "Bus is running late. Keep waiting."
-        END IF
-    END WHILE
-
-    // Step 4: Ride the bus to school
-    PRINT "Board the bus and find a seat"
-    RIDE bus to school
-
-    // Step 5: Check if you arrived at school
-    IF arrivedAtSchool == TRUE THEN
-        PRINT "You have arrived at school."
-    ELSE
-        PRINT "Something went wrong. Check your route again."
-    END IF
-
-    // Loop 2: Walk to school if the bus doesn't show up
-    WHILE busNotArrived AND you are not at school DO
-        PRINT "Bus didn't arrive. Walk to school."
-        WALK towards school
-    END WHILE
-
-    PRINT "You are now at school."
-END
+# Check if the year is valid
+if year <= 0:
+    print("Invalid year. Year must be greater than 0.")
+else:
+    # Check if the month is valid
+    if month < 1 or month > 12:
+        print("Invalid month. Month must be between 1 and 12.")
+    else:
+        # Check if the day is valid based on the month
+        if day < 1 or day > 31:
+            print("Invalid day. Day must be between 1 and 31.")
+        else:
+            # Additional checks could be added here for specific months and leap years, but for now, 
+            # we assume any day between 1 and 31 is valid as long as the month is correct
+            print(f"The date {month}/{day}/{year} is valid.")
